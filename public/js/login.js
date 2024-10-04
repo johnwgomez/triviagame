@@ -16,10 +16,14 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       // If successful, redirect the browser to the profile page
 <<<<<<< HEAD
+<<<<<<< HEAD
       document.location.replace('/');
 =======
       document.location.replace('/profile');
 >>>>>>> f1353eb (added intial file structure)
+=======
+      document.location.replace('/');
+>>>>>>> ff217da (new files)
     } else {
       alert(response.statusText);
     }
@@ -42,10 +46,14 @@ const signupFormHandler = async (event) => {
 
     if (response.ok) {
 <<<<<<< HEAD
+<<<<<<< HEAD
       document.location.replace('/');
 =======
       document.location.replace('/profile');
 >>>>>>> f1353eb (added intial file structure)
+=======
+      document.location.replace('/');
+>>>>>>> ff217da (new files)
     } else {
       alert(response.statusText);
     }
