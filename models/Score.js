@@ -34,3 +34,5 @@ Score.init(
 
     }
 )
+
+module.exports = Score
