@@ -5,15 +5,14 @@ const openaiForm = async(e)=> {
     const difficulty= document.getElementById('difficulty').value;
 
     if(category && difficulty){
-        const response = await fetch('/api/play/playGame', {
+        const response = await fetch('/api/play/player', {
             method: 'POST',
             body: JSON.stringify({category, difficulty}),
             headers: {'Content-Type': 'application/json'}
         })
-
-        const data = await response.json()
-        if(data){
+        if(response.ok){
             document.location.reload()
+            
         }else{
             alert(response.statusText)
         }
