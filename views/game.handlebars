@@ -1,21 +1,30 @@
 <div>
 
-    <form class="flex flex-row m-5 border-4 rounded-lg border-primary-400 p-4"
-        id="game-form">
+    <form
+        class="flex flex-row m-5 border-4 rounded-lg border-primary-400 p-4 space-x-3"
+        id="form-trivia">
         <div class="flex flex-col">
             <label for="text">Category</label>
-            <input id="category" type="text"
-                class="border-4 border-purple-300 rounded-lg mt-2 px-2"
-                placeholder="'Science'" />
+            <select id="category"
+                class="border-4 border-purple-300 rounded-lg mt-2 px-2">
+                <option style="display:none">Category</option>
+                <option value="10">Books</option>
+                <option value="12">Music</option>
+                <option value="21">Sports</option>
+                <option value="15">Video Games</option>
+                <option value="18">Computers</option>
+                <option value="22">Geography</option>
+                <option value="27">Animals</option>
+            </select>
         </div>
-        <div class="mx-5 flex flex-col">
+        <div class="flex flex-col">
             <label>Difficulty</label>
             <select id="difficulty"
-                class="mt-2 border-4 border-purple-300 rounded-lg px-2">
-                <option value disabled selected>Select Difficulty</option>
-                <option value="Easy">Easy</option>
-                <option value="Medium">Medium</option>
-                <option value="Hard">Hard</option>
+                class="border-4 border-purple-300 rounded-lg mt-2 px-2">
+                <option style="display:none">Select Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
             </select>
         </div>
         <div class="mt-5 mx-5 flex ">
@@ -23,16 +32,17 @@
                 class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">Start</button>
         </div>
         <div class="mt-7 mx-5">
-            <a
-                class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 "
-                href="/leaderboard">View Leaderboard</a>
+            <a href="/leaderboard"><button
+                    class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">View
+                    Leaderboard</button></a>
         </div>
+
     </form>
-    <div class="border-4 border-purple-400">
-        <h1>{{question}}</h1>
-        {{#each answers as |answer|}}
-        <h1>{{answer.choice.text}}</h1>
-        {{/each}}
+    <div>
+        {{question}}
     </div>
+    
+   
+
 </div>
-<script src="./js/openai.js"></script>
+<script src="./js/triviaCall.js"></script>

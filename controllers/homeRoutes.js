@@ -29,4 +29,8 @@ router.get('/game', (req,res)=> {
     logged_in: req.session.logged_in
 })
 })
+
+router.get('/gameDisplay', (req,res)=> {
+  res.render('gameDisplay')
+})
 module.exports = router;

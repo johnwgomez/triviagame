@@ -1,19 +1,20 @@
 const Score = require('../../models/Score')
-const {generateTrivia, generateAnswers} = require('../../utils/openai')
 const router = require('express').Router()
+const {triviaForm }= require('../../utils/opentdb')
 
 router.post('/player',async(req,res)=>{
     try{
         const {category, difficulty} = req.body;
 
-        const question = await generateTrivia(category, difficulty);
-        const answerGenerated = await generateAnswers(question);
-        const answers = JSON.parse(answerGenerated)
-       res.render('game', {
-        question,
-        answers: answers.answers,
-        logged_in: req.session.logged_in
-       })
+        const trivia =  await triviaForm(category,difficulty)
+        
+        const question = decodeURI(trivia[0].question)
+        console.log(question)
+    res.render('game',
+        {
+            question
+        }
+    )
     }catch(err){
         res.status(500).json(err)
         console.log(err)
