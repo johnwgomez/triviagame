@@ -24,13 +24,5 @@ router.get('/leaderboard', (req,res)=> {
     }
   )
 })
-router.get('/game', (req,res)=> {
-  res.render('game',{
-    logged_in: req.session.logged_in
-})
-})
 
-router.get('/gameDisplay', (req,res)=> {
-  res.render('gameDisplay')
-})
 module.exports = router;

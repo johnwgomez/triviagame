@@ -1,17 +1,15 @@
-
-const triviaHandler = async(e)=> {
+const openaiForm = async(e)=> {
     e.preventDefault();
 
     const category = document.getElementById('category').value;
-    const difficulty = document.getElementById('difficulty').value;
-    
+    const difficulty= document.getElementById('difficulty').value;
+
     if(category && difficulty){
-         fetch(`/api/play/game`, {
+        fetch('/api/play/game', {
             method: 'POST',
-            body: JSON.stringify({category,difficulty}),
-            headers: {'Content-Type': 'application/json'}
-        })
-        .then((response)=> {
+            body: JSON.stringify({category, difficulty}),
+            headers: {'Content-Type': 'text/html; charset=utf-8'}
+        }).then((response)=> {
             if(!response.ok){
                 console.log("not getting the data")
             }
@@ -24,4 +22,4 @@ const triviaHandler = async(e)=> {
     }
 }
 
-document.getElementById('form-trivia').addEventListener('submit', triviaHandler)
+document.getElementById('game-form').addEventListener('submit', openaiForm)

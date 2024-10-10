@@ -8,6 +8,6 @@ module.exports = {
     return parseInt(amount).toLocaleString();
   },
   decodeString: (string)=>{
-    return decodeURI(string)
+    return decodeURIComponent(string)
   }
 };

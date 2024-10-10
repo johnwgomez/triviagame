@@ -11,7 +11,53 @@
                 Start Game
             </a>  
         </div>
+
             </div>
-        </div> 
+        </div>
+        {{#if logged_in}}
+        <form
+        class="flex flex-row m-5 border-4 rounded-lg border-primary-400 p-4 space-x-3"
+        id="form-trivia">
+        <div class="flex flex-col">
+            <label for="text">Category</label>
+            <select id="category"
+                class="border-4 border-purple-300 rounded-lg mt-2 px-2">
+                <option style="display:none">Category</option>
+                <option value="10">Books</option>
+                <option value="12">Music</option>
+                <option value="21">Sports</option>
+                <option value="15">Video Games</option>
+                <option value="18">Computers</option>
+                <option value="22">Geography</option>
+                <option value="27">Animals</option>
+            </select>
+        </div>
+        <div class="flex flex-col">
+            <label>Difficulty</label>
+            <select id="difficulty"
+                class="border-4 border-purple-300 rounded-lg mt-2 px-2">
+                <option style="display:none">Select Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+        <div class="mt-5 mx-5 flex ">
+            <a href="/api/play/game"><button type="submit"
+                class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">Start</button></a>
+        </div>
+        <div class="mt-7 mx-5">
+            <a href="/leaderboard"><button
+                    class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">View
+                    Leaderboard</button></a>
+        </div>
+
+    </form> 
+    {{/if}}
     </div>
+
 </div>
+
+<script src="./js/triviaCall.js"></script>
+
+
