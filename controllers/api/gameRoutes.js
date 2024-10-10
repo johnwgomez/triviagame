@@ -24,7 +24,8 @@ router.post('/game',async(req,res)=>{
         {   
             question: decodedQuestion,
             incorrects: triviaAnswers,
-            correct: decodedCorrect
+            correct: decodedCorrect,
+            logged_in: req.session.logged_in
         }
     )
     }catch(err){
