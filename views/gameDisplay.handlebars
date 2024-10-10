@@ -2,10 +2,15 @@
         <div>
         <h1>{{question}}</h1>
         </div>
+        <form>
         {{#each incorrects as |incorrect|}}
-        <h2>{{decodeString incorrect}}</h2>
+        <input type="radio" id="incorrect" name="{{decodeString incorrect}}" value="{{decodeString incorrect}}"/>
+        <label for="incorrect">{{decodeString incorrect}}</label>
         {{/each}}
+        <input type="radio" id="correct" name="{{decodeString correct}}" value="{{decodeString correct}}"/>
+        <label for="correct">{{decodeString correct}}</label>
         <h2>{{correct}}</h2>
+        </form>
 
         
 </div>
