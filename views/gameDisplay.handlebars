@@ -1,0 +1,11 @@
+<div class="border-4 border-purple-400">
+        <div>
+        <h1>{{question}}</h1>
+        </div>
+        {{#each incorrects as |incorrect|}}
+        <h2>{{decodeString incorrect}}</h2>
+        {{/each}}
+        <h2>{{correct}}</h2>
+
+        
+</div>

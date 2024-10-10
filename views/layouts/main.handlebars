@@ -5,40 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fund My Project!</title>
-  <link rel="stylesheet" href="/css/jass.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+        /* Custom color theme */
+        .bg-primary { background-color: #6B47DC; } /* Bright Purple */
+        .bg-secondary { background-color: #47A3DC; } /* Electric Blue */
+        .bg-background { background-color: #F9FAFB; } /* Light Gray */
+        .text-text { color: #1A202C; } /* Dark Slate */
+        .bg-highlight { background-color: #A3E635; } /* Lime Green */
+        .bg-error { background-color: #DC4747; } /* Red */
+    </style>
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+  <div class="flex border-b-4 border-gray-300 mx-4">
+    <nav class="m-3 space-x-6 mx-auto">
+      {{#if logged_in}}
+      <a href="/leaderboard"><button class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300">Leaderboard</button></a>
+      <button class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 " id="logout">Log out</button>
+      <a href="/"><button class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">Home</button></a>
+      {{else}}
+       <a href="/login"><button class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">Log In</button></a>
+      {{/if}}
+    </nav>
   </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}
+  <div>
+    {{{body}}}
+  </div>
 </body>
-
+<script src="./js/logout.js"></script>
 </html>
