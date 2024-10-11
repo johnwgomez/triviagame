@@ -1,10 +1,10 @@
 <form id="trivia-form" class="max-w-lg mx-auto p-8 bg-purple-700 text-white rounded-lg shadow-lg mt-8">
   <h2 class="text-3xl font-bold text-center mb-8">Trivia Question</h2>
 
-  <!-- Question Display -->
-  <p class="text-xl font-semibold mb-6">Which planet is known as the Red Planet?</p>
+ 
+  <p class="text-xl font-semibold mb-6" id="{{difficulty}}">{{question}}</p>
 
-  <!-- Ordered List for Multiple Choice Options -->
+ 
   <ol class="list-decimal list-inside mb-8 space-y-4">
         {{#each incorrects as |incorrect|}}
     <li class="flex items-center bg-purple-500 p-4 rounded-lg hover:bg-purple-600 transition ease-in-out duration-200">
