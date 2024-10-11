@@ -24,8 +24,10 @@ router.get('/leaderboard', async (req,res)=> {
       {
         include: {
           model: Score,
-          order: 'ASC'
-        }
+        },
+        order: [
+          [Score, 'score_number', 'DESC']
+        ]
       }
     )
     const users = userScores.map((user)=> user.get({plain:true}))
@@ -41,4 +43,10 @@ router.get('/leaderboard', async (req,res)=> {
 }
 })
 
+
+
+
+router.get('/success', (req,res)=> {
+  res.render('success')
+})
 module.exports = router;

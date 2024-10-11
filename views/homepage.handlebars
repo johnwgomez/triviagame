@@ -12,6 +12,7 @@
             </div>
         </div>
         {{#if logged_in}}
+        <div id="game-container">
         <form
         class="flex flex-row m-5 border-4 rounded-lg border-primary-400 p-4 space-x-3"
         id="form-trivia">
@@ -40,8 +41,8 @@
             </select>
         </div>
         <div class="mt-5 mx-5 flex ">
-            <a href="/api/play/game"><button type="submit"
-                class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">Start</button></a>
+            <button type="submit"
+                class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">Start</button>
         </div>
         <div class="mt-7 mx-5">
             <a href="/leaderboard"><button
@@ -50,6 +51,7 @@
         </div>
 
     </form> 
+        </div>
     {{/if}}
     </div>
 

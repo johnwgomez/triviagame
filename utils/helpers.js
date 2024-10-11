@@ -9,5 +9,8 @@ module.exports = {
   },
   decodeString: (string)=>{
     return decodeURIComponent(string)
+  },
+  capitalizeFirstLetter: (string)=> {
+    return string.charAt(0).toUpperCase() + string.slice(1)
   }
 };

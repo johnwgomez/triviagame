@@ -13,7 +13,7 @@ const signupForm = async(e)=> {
         })
 
         if(response.ok){
-            document.location.replace('/game')
+            document.location.replace('/')
         }else{
             alert(response.statusText)
         }
