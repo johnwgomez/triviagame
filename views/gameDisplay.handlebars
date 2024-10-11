@@ -1,3 +1,4 @@
+
 <form id="trivia-form" class="max-w-lg mx-auto p-8 bg-purple-700 text-white rounded-lg shadow-lg mt-8">
   <h2 class="text-3xl font-bold text-center mb-8">Trivia Question</h2>
 
@@ -35,6 +36,21 @@
       </label>
     </li>
   </ol>
+
+<div class="border-4 border-purple-400">
+        <div>
+        <h1>{{question}}</h1>
+        </div>
+        <form>
+        {{#each incorrects as |incorrect|}}
+        <input type="radio" id="incorrect" name="{{decodeString incorrect}}" value="{{decodeString incorrect}}"/>
+        <label for="incorrect">{{decodeString incorrect}}</label>
+        {{/each}}
+        <input type="radio" id="correct" name="{{decodeString correct}}" value="{{decodeString correct}}"/>
+        <label for="correct">{{decodeString correct}}</label>
+        <h2>{{correct}}</h2>
+        </form>
+
 
   
   <button
