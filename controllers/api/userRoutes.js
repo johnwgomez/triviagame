@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Score } = require('../../models');
 
 router.post('/login', async(req,res)=> {
   try{
@@ -32,7 +32,15 @@ router.post('/login', async(req,res)=> {
 
 router.post('/signup', async(req,res)=> {
   try{
-    const newUser = await User.create(req.body)
+    const newUser = await User.create(req.body,{
+      include: {
+        model: Score
+      }
+    })
+    await Score.create({
+      score_number: 0,
+      player_id: newUser.id
+    })
 
     req.session.save(()=>{
       req.session.user_id = newUser.id
