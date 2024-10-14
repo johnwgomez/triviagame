@@ -1,5 +1,3 @@
-
-
 const Score = require('../../models/Score');
 const { decodeString } = require('../../utils/helpers');
 const router = require('express').Router()
@@ -15,8 +13,6 @@ router.get('/game', async (req, res) => {
       const triviaAnswers = trivia[0].incorrect_answers;
       const correctAnswer = trivia[0].correct_answer;
       const decodedCorrect = decodeString(correctAnswer);
-      console.log(trivia)
-  
       res.render('gameDisplay', {
         question: decodedQuestion,
         incorrects: triviaAnswers,
@@ -52,10 +48,7 @@ router.get('/game', async (req, res) => {
             updatedScore = userScore.score_number + 3
         
       }
-    }else {
-        const newScore = await Score.create({ player_id: userId, score_number: 1 });
-        updatedScore = newScore.score_number;
-      }
+    }
   
       res.json({ correct: isCorrect, score: updatedScore });
     } catch (err) {

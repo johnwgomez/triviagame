@@ -5,7 +5,6 @@ const triviaHandler = async (e) => {
     const difficulty = document.getElementById('difficulty').textContent;
     const correctAnswer = document.querySelector('input[name="correctAnswer"]').value;
     console.log(correctAnswer)
-  
     if (selectedAnswer) {
       try {
         const response = await fetch('/api/play/game', {
@@ -15,10 +14,13 @@ const triviaHandler = async (e) => {
         });
   
         const result = await response.json();
+        console.log(result)
         if (result.correct) {
-          alert(`Correct Answer! Your updated score is: ${result.score}`);
+          (`Correct Answer! Your updated score is: ${result.score}`);
+          document.location.replace('/success')
         } else {
-          alert('Incorrect Answer.');
+          
+          document.location.replace('/try-again')
         }
       } catch (err) {
         console.error('Error submitting answer:', err);
