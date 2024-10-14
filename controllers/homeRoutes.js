@@ -43,10 +43,16 @@ router.get('/leaderboard', async (req,res)=> {
 }
 })
 
-
-
-
-router.get('/success', (req,res)=> {
-  res.render('success')
+router.get('/success', (req,res)=>{
+  res.render('success', {
+    logged_in: req.session.logged_in
+  })
 })
+
+router.get('/try-again', (req,res)=> {
+  res.render('try-again', {
+    logged_in: req.session.logged_in
+  })
+})
+
 module.exports = router;

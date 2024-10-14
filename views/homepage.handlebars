@@ -1,62 +1,126 @@
 <div class="bg-gray-200 mx-4 rounded-lg mt-4">
+  <!-- Welcome Section -->
   <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
-        <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-purple-900 md:text-5xl lg:text-6xl ">Welcome to Trivia Master</h1>
-        <p class="mb-8 text-lg font-normal text-mint-500 lg:text-xl sm:px-16 xl:px-48 dark:text-mint-300">Challenge yourself with trivia questions across various categories! Are you ready to prove your knowledge?</p>
-        <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
-            <a href="/signup" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-dark rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-                Sign up
-                <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
-        </div>
-
-            </div>
-        </div>
-        {{#if logged_in}}
-        <div id="game-container">
-        <form
-        class="flex flex-row m-5 border-4 rounded-lg border-primary-400 p-4 space-x-3"
-        id="form-trivia">
-        <div class="flex flex-col">
-            <label for="text">Category</label>
-            <select id="category"
-                class="border-4 border-purple-300 rounded-lg mt-2 px-2">
-                <option style="display:none">Category</option>
-                <option value="10">Books</option>
-                <option value="12">Music</option>
-                <option value="21">Sports</option>
-                <option value="15">Video Games</option>
-                <option value="18">Computers</option>
-                <option value="22">Geography</option>
-                <option value="27">Animals</option>
-            </select>
-        </div>
-        <div class="flex flex-col">
-            <label>Difficulty</label>
-            <select id="difficulty"
-                class="border-4 border-purple-300 rounded-lg mt-2 px-2">
-                <option style="display:none">Select Difficulty</option>
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-        </div>
-        <div class="mt-5 mx-5 flex ">
-            <button type="submit"
-                class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 ">Start</button>
-        </div>
-        <div class="mt-7 mx-5">
-            <a href="/leaderboard"><button
-                    class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 -mt-2">View
-                    Leaderboard</button></a>
-        </div>
-
-    </form> 
-        </div>
-    {{/if}}
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-purple-900 md:text-5xl lg:text-6xl">
+      Welcome to Trivia Master
+    </h1>
+    <p class="mb-8 text-lg font-normal text-mint-500 lg:text-xl sm:px-16 xl:px-48 dark:text-mint-300">
+      Challenge yourself with trivia questions across various categories! Are you ready to prove your knowledge?
+    </p>
+    <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+      <a href="/signup" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-dark rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
+        Sign up
+        <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+      </a>
     </div>
+  </div>
 
+  <!-- Trivia Form Section -->
+  {{#if logged_in}}
+  <div id="game-container" class="w-full max-w-xl mx-auto mt-8">
+    <form class="flex flex-col sm:flex-row sm:space-x-3 m-5 border-4 rounded-lg border-primary-400 p-4 space-y-3 sm:space-y-0" id="form-trivia">
+      <!-- Category Field -->
+      <div class="flex flex-col w-full sm:w-auto">
+        <label for="category" class="text-gray-700">Category</label>
+        <select id="category" class="border-4 border-purple-300 rounded-lg mt-2 px-2 w-full sm:w-auto">
+          <option style="display:none">Category</option>
+          <option value="10">Books</option>
+          <option value="12">Music</option>
+          <option value="21">Sports</option>
+          <option value="15">Video Games</option>
+          <option value="18">Computers</option>
+          <option value="22">Geography</option>
+          <option value="27">Animals</option>
+        </select>
+      </div>
+
+      <!-- Difficulty Field -->
+      <div class="flex flex-col w-full sm:w-auto">
+        <label for="difficulty" class="text-gray-700">Difficulty</label>
+        <select id="difficulty" class="border-4 border-purple-300 rounded-lg mt-2 px-2 w-full sm:w-auto">
+          <option style="display:none">Select Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <!-- Start Button -->
+      <div class="mt-5 flex w-full sm:w-auto">
+        <button type="submit" class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 w-full sm:w-auto">
+          Start
+        </button>
+      </div>
+
+      <!-- Leaderboard Button -->
+      <div class="mt-5 flex w-full sm:w-auto">
+        <a href="/leaderboard" class="w-full">
+          <button class="bg-primary text-white py-2 px-6 rounded-lg hover:bg-secondary text-lg hover:border-4 hover:border-purple-300 w-full sm:w-auto">
+            View Leaderboard
+          </button>
+        </a>
+      </div>
+    </form>
+  </div>
+  {{/if}}
+
+  <!-- How to Play Section -->
+  <div class="max-w-6xl mx-auto p-6 bg-white shadow-md rounded-lg mt-8">
+    <h1 class="text-2xl text-center font-bold text-gray-800 mb-4">How to Play</h1>
+    <div class="space-y-6">
+      <!-- Answer the Question -->
+      <div class="flex items-start">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-700">🌟 Answer the Question</h3>
+          <p class="text-gray-600">
+            A single question will appear on your screen, covering various topics—from history to pop culture! No need to rush—there’s 
+            <span class="font-semibold text-indigo-500">no time limit</span>, so take your time to think it through.
+          </p>
+        </div>
+      </div>
+
+      <!-- Submit Your Answer -->
+      <div class="flex items-start">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-700">🚀 Submit Your Answer</h3>
+          <p class="text-gray-600">Select your answer from the available options. Once you're ready, submit your response and see how you did!</p>
+        </div>
+      </div>
+
+      <!-- Check Your Score -->
+      <div class="flex items-start">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-700">🏆 Check Your Score</h3>
+          <p class="text-gray-600">
+            After submitting, you'll instantly find out whether you nailed it or not, along with your current score. Keep track and challenge yourself to do better each round!
+          </p>
+        </div>
+      </div>
+
+      <!-- Learn Something New -->
+      <div class="flex items-start">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-700">📚 Learn Something New</h3>
+          <p class="text-gray-600">
+            Whether you got it right or wrong, you'll get a fun fact after each question, so you're always learning something new.
+          </p>
+        </div>
+      </div>
+
+      <!-- Start Again -->
+      <div class="flex items-start">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-700">🔄 Start Again</h3>
+          <p class="text-gray-600">
+            Ready for another round? A new question will appear, and the game starts all over again. See how many you can get right!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- JavaScript -->
 <script src="./js/triviaCall.js"></script>
-
-
