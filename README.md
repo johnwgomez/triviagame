@@ -12,6 +12,13 @@ Challenge yourself to our trivia game at: [Trivia Master](https://triviagame-1c9
 - **Difficulty Levels**: Whether you want to play casually or really challenge yourself, choose the difficutly level that suits you!
 - **Leaderboard**: Compare your score to other players! Do you have what it takes to make it to the top of the leaderboard?
 
+## Screenshots
+
+![screenshot](images/triviagame-1c98.onrender.com_.png)
+
+
+![screenshot](images/triviagame-1c98.onrender.com_api_play_game_category=18&difficulty=medium.png)
+
 ## Technology Used
 
 [Open Trivia Database API](https://opentdb.com/)
@@ -25,3 +32,11 @@ Challenge yourself to our trivia game at: [Trivia Master](https://triviagame-1c9
 [Handlebars](https://handlebarsjs.com/)
 
 [Tailwind CSS](https://tailwindcss.com/)
+
+## Resources
+
+[Sequelize Model Querying - Basics](https://sequelize.org/docs/v6/core-concepts/model-querying-basics/#simple-update-queries)
+
+[MDN - decodeURI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI)
+
+[MDN - Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
