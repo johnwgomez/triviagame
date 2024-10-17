@@ -1,5 +1,4 @@
 
-
 const triviaHandler = async (e) => {
     e.preventDefault();
   
