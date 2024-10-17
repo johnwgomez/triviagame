@@ -8,36 +8,22 @@
 
  
   <ol class="list-decimal list-inside mb-8 space-y-4">
-        {{#each incorrects as |incorrect|}}
+        {{#each questions as |question|}}
     <li class="flex items-center bg-purple-500 p-4 rounded-lg hover:bg-purple-600 transition ease-in-out duration-200">
       <label class="flex items-center cursor-pointer w-full">
         <input
           type="radio"
           id="incorrect"
           name="answer"
-          value="{{decodeString incorrect}}"
+          value="{{decodeString question}}"
           class="mr-4 h-6 w-6 text-purple-300 focus:ring-purple-300"
           
         />
-        <span class="text-lg font-semibold">{{decodeString incorrect}}</span>
+        <span class="text-lg font-semibold">{{decodeString question}}</span>
       </label>
     </li>
     {{/each}}
-    <li class="flex items-center bg-purple-500 p-4 rounded-lg hover:bg-purple-600 transition ease-in-out duration-200">
-      <label class="flex items-center cursor-pointer w-full">
-        <input
-          type="radio"
-          id="correct"
-          name="answer"
-          value="{{correct}}"
-          class="mr-4 h-6 w-6 text-purple-300 focus:ring-purple-300"
-          
-        />
-        <span class="text-lg font-semibold">{{correct}}</span>
-      </label>
-    </li>
   </ol>
-
   <input type="hidden" name="correctAnswer" value="{{correct}}">
   
 
