@@ -17,7 +17,7 @@ router.get('/signup', (req,res)=> {
   res.render('signup')
 })
 
-router.get('/leaderboard', async (req,res)=> {
+router.get('/leaderboard', withAuth,async (req,res)=> {
   try{
 
     const userScores = await User.findAll(

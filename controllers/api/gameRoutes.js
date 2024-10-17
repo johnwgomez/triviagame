@@ -2,7 +2,9 @@ const Score = require('../../models/Score');
 const { decodeString } = require('../../utils/helpers');
 const router = require('express').Router()
 const {triviaForm}= require('../../utils/opentdb')
-router.get('/game', async (req, res) => {
+const withAuth = require('../../utils/auth')
+
+router.get('/game', withAuth,async (req, res) => {
     try {
       const { category, difficulty } = req.query;
   
@@ -26,7 +28,7 @@ router.get('/game', async (req, res) => {
     }
   });
 
-  router.post('/game', async (req, res) => {
+  router.post('/game',async (req, res) => {
     try {
       const { answer, difficulty, correct } = req.body;
       const isCorrect = answer === correct;
